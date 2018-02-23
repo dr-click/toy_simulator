@@ -1,0 +1,12 @@
+# Back to the same place
+PLACE 1,1,NORTH
+MOVE
+RIGHT
+MOVE
+RIGHT
+MOVE
+RIGHT
+MOVE
+RIGHT
+REPORT
+#Output: 1,1,NORTH

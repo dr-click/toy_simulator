@@ -1,0 +1,7 @@
+# Invalid
+PLACE 0,0,SOUTH
+MOVE
+MOVE
+LEFT
+REPORT
+#Output: Can't move, InvalidToy or InvalidBoard

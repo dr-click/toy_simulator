@@ -25,7 +25,8 @@ describe Toy do
     end
 
     it 'can not be moved out of board range' do
-      expect { toy_2.move }.to raise_error("Can't move, Out of board range")
+      toy_2.move
+      expect(toy_2.report).to eq("Can't move, Out of board range")
     end
   end
 
@@ -35,7 +36,8 @@ describe Toy do
     end
 
     it 'can not be moved' do
-      expect { toy_with_positions.move }.to raise_error("Can't move, InvalidToy or InvalidBoard")
+      toy_with_positions.move
+      expect(toy_with_positions.report).to eq("Can't move, InvalidToy or InvalidBoard")
     end
   end
 end

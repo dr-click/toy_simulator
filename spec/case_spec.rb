@@ -40,4 +40,18 @@ describe Case do
       expect(sample_case.toy.face).to eql("WEST")
     end
   end
+
+  describe 'Sample Cases' do
+    Dir.glob('samples/*.txt') do |file|
+      it 'pass all cases' do
+        sample_case = Case.new
+        output = nil
+        File.open(file).each do |line|
+          sample_case.read_line(line)
+          output = line
+        end
+        expect(sample_case.toy.report).to eq(output.split(":")[1].strip)
+      end
+    end
+  end
 end

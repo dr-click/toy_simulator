@@ -1,10 +1,11 @@
 class Toy
-  attr_reader :current_position, :face, :board
+  attr_reader :current_position, :face, :board, :error
 
   def initialize(x=nil, y=nil, f=nil, board)
     @current_position = board.in_range({x: x, y: y})
     @face = Toy.faces.include?(f) ? f : nil
     @board = board
+    @error = nil
   end
 
   # List of available toy faces
@@ -19,10 +20,14 @@ class Toy
       if new_position
         @current_position = new_position
       else
-        raise "Can't move, Out of board range"
+        @current_position = nil
+        @fac = nil
+        @error = "Can't move, Out of board range"
       end
     else
-      raise "Can't move, InvalidToy or InvalidBoard"
+      @current_position = nil
+      @fac = nil
+      @error = "Can't move, InvalidToy or InvalidBoard"
     end
   end
 
@@ -33,6 +38,6 @@ class Toy
 
   # Final sample case results
   def report
-    "#{@current_position[:x]},#{@current_position[:y]},#{@face}"
+    @current_position && @face ? "#{@current_position[:x]},#{@current_position[:y]},#{@face}" : @error
   end
 end

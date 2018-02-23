@@ -44,7 +44,7 @@ class Movement
   def move_top
     {x: @toy.current_position[:x], y: @toy.current_position[:y] + @step}
   end
-  
+
   # Move to bottom in case of SOUTH face
   def move_bottom
     {x: @toy.current_position[:x], y: @toy.current_position[:y] - @step}

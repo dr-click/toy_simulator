@@ -3,7 +3,7 @@ class Case
 
   def initialize(x=5, y=5)
     @toy = nil
-    @board = Board.new(x, y) # Create a board with 6 * 6 units
+    @board = Board.new(x, y) # Create a board with 5 * 5 units
   end
 
   # Read line by line from sample files
