@@ -25,4 +25,9 @@ class Toy
       raise "Can't move, InvalidToy or InvalidBoard"
     end
   end
+
+  # Rotate the valid toy on a valid bord or raise exception
+  def rotate(face)
+    @face = Rotation.new(@face, face).rotate
+  end
 end

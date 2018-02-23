@@ -2,6 +2,7 @@ require 'spec_helper'
 require 'toy'
 require 'board'
 require 'movement'
+require 'rotation'
 
 describe Toy do
   let(:toy) { Toy.new(0, 0, "NORTH", Board.new(5, 5)) }
@@ -16,6 +17,11 @@ describe Toy do
     it 'can be moved to NORTH' do
       toy.move
       expect(toy.current_position).to eq({x: 0, y: 1})
+    end
+
+    it 'can be rotated' do
+      toy.rotate("LEFT")
+      expect(toy.face).to eq("WEST")
     end
 
     it 'can not be moved out of board range' do
