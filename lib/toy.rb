@@ -30,4 +30,9 @@ class Toy
   def rotate(face)
     @face = Rotation.new(@face, face).rotate
   end
+
+  # Final sample case results
+  def report
+    "#{@current_position[:x]},#{@current_position[:y]},#{@face}"
+  end
 end
